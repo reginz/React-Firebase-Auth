@@ -1,0 +1,9 @@
+.oil-card{
+    width: 275px;
+    max-width: 275px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 1em 1.5em;
+    color: var(--white);
+}

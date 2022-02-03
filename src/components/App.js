@@ -8,7 +8,7 @@ import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import OilLibrary from "../pages/OilLibrary"
-
+import '../styles/App.css'
 function App() {
   return (
    
