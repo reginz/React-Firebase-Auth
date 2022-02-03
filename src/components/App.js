@@ -9,6 +9,8 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import OilLibrary from "../pages/OilLibrary"
 import '../styles/App.css'
+import '../styles/OilCard.css'
+import '../styles/ThreeView.css'
 import SingleOil from "../pages/SingleOil"
 
 function App() {
