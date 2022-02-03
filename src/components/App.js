@@ -9,16 +9,19 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import OilLibrary from "../pages/OilLibrary"
 import '../styles/App.css'
+import SingleOil from "../pages/SingleOil"
+
 function App() {
   return (
    
-      <div className="w-100" style={{ maxWidth: "400px" }}>
+      <div className="w-100" style={{backgroundColor:"var(--white)" }}>
         <Router>
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={OilLibrary} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute path="/oil-details/:id" component={SingleOil} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />

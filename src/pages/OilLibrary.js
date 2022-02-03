@@ -24,17 +24,12 @@ function OilLibrary() {
     return (
         <Container className='d-flex' >
             {oilData && oilData.map((data)=>{
-                var components = data.components && data.components.map((component)=>{
-                    return component.name
-                })
-                var properties = data.Properties && data.Properties.map((property)=>{
-                    return property.name
-                })
                 var oilName = data && data.name
                 var family = data && data.family
                 return(
                     <div>
                     <OilCard 
+                    route={oilName}
                     family={family}
                     name={oilName.toUpperCase()} />
                     </div>

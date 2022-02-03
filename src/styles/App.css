@@ -1,6 +1,7 @@
 :root{
     --purple: #B682D5 !important;
     --dark-purple: #9268aa !important;
+    --soft-purple: #dbc2ea !important;
     --pink: #EBAFD1 !important;
     --dark-pink: #E592BE !important;
     --blue: #B4D9F0 !important;
@@ -9,6 +10,8 @@
     --dark-green: #80CB95 !important;
     --yellow: #F8E89C !important;
     --orange: #EFC17A !important;
+    --soft-orange: #f1ce95 !important;
     --white: #F8F7FC !important;
     --gray: #C9C9CB !important;
+    --dark-gray: #79797a !important;
 }

@@ -7,3 +7,20 @@
     padding: 1em 1.5em;
     color: var(--white);
 }
+.info-card{
+    display: flex;
+    gap: 2em;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    padding: 1em 1.5em;
+    background-color: #fff;
+    color: var(--dark-gray);
+}
+.orange-hr{
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    width: 100%;
+}
+.props-card-puprle{
+    background-color: var(--purple);
+}
