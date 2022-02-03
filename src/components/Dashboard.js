@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { Container } from "react-bootstrap"
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -21,6 +22,10 @@ export default function Dashboard() {
 
   return (
     <>
+     <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
@@ -36,6 +41,7 @@ export default function Dashboard() {
           Log Out
         </Button>
       </div>
+      </Container>
     </>
   )
 }
