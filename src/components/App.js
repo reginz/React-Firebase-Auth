@@ -12,11 +12,14 @@ import '../styles/App.css'
 import '../styles/OilCard.css'
 import '../styles/ThreeView.css'
 import SingleOil from "../pages/SingleOil"
+import NotFound from "../pages/NotFound"
+import Navigation from '../components/Navigation'
 
 function App() {
   return (
    
       <div className="w-100" style={{backgroundColor:"var(--white)" }}>
+        <Navigation />
         <Router>
           <AuthProvider>
             <Switch>
@@ -27,6 +30,7 @@ function App() {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route component={NotFound} />
             </Switch>
           </AuthProvider>
         </Router>

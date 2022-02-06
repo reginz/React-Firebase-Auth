@@ -1,11 +1,9 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
 import OilLibraryCards from '../components/cards/OilLibraryCards';
 
-function OilLibrary(props) {
+function OilLibrary() {
     return (
-        <div className='d-flex align-items-between'>
-            <Sidebar />
+        <div className='d-flex flex-column' style={{gap:"5em"}}>
             <OilLibraryCards />
         </div>
     );
