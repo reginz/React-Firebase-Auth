@@ -15,3 +15,8 @@
     --gray: #C9C9CB !important;
     --dark-gray: #79797a !important;
 }
+.page-wrapper{
+    max-width:900px !important;  
+    padding: 2em 5em;
+    position: relative;
+}
