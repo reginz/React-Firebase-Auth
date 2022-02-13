@@ -47,6 +47,7 @@ function OilLibraryCards() {
                     else if (data.name.toLowerCase().includes(search.toLowerCase())){                    
                       return data
                     }
+                    return null
               })
              // Map cards
               .map((data)=>{

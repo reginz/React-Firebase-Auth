@@ -2,13 +2,13 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import '../../styles/ThreeView.css'
 
-function PropsCard(props) {
+function ComponentsCard(props) {
   const properities = props.properities
   return (
-    <div className='no-variant-container'>
+      <div className='variant-container'>
       <Collapsible
       open="true" 
-      trigger="Properities">
+      trigger="Components">
 
         {properities.map((properity)=>{
           return(
@@ -24,4 +24,4 @@ function PropsCard(props) {
   );
 }
 
-export default PropsCard;
+export default ComponentsCard;
