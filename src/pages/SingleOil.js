@@ -41,7 +41,9 @@ function SingleOil() {
                         <>
                             <h1>{oil_info.name}</h1>
 
-                            <SaveOil oil_id = {oil_info.oil_id}/>
+                            <SaveOil 
+                            oil_name={oil_info.name}
+                            oil_id={oil_info.oil_id}/>
 
                             <InfoCard
                             family={oil_info.family}

@@ -7,10 +7,18 @@ const db = app.firestore()
 function SaveOil(props) {
     const currentUser = useAuth()
 
-    function saveOil(){
+    async function saveOil(){
         try{
-            const oilPathRef = db.collection("SavedItems").document(currentUser.uid).get();
-            
+            const oilPathRef = await db.collection("SavedItems").document(currentUser.uid).get();
+            if(oilPathRef.exists){
+                return <div>Already saved</div>
+            }else{
+                let name = props.oil_name
+                oilPathRef.set({
+                    name: [props.oil_id]
+                })
+                console.log("Oil ad")
+            }
         }catch(er){
 
         }
