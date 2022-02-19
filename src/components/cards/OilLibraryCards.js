@@ -27,9 +27,20 @@ function OilLibraryCards() {
       }, []);
 
     return (
-        <Container className='page-wrapper'>
-          {/* Search oils */}
-          <div>
+      <>
+       <div className='page-container' style={{ 
+            position: "relative",
+                        padding: "2em",
+                        width: "100%",
+                       }}>   
+        <div className='page-wrapper'
+        style={{maxWidth:"900px",  display: "flex",
+                        justifyContent: "center",
+                        alignItems:"center",
+                        flexDirection:"row",
+                        flexWrap:"wrap",
+                        gap: "3em",
+                         margin:"0 auto"}}> 
           <h2>Filter Oils</h2>
            <input className='searchbar mb-3'
               type="text" 
@@ -66,7 +77,8 @@ function OilLibraryCards() {
               </div>
               </div>
             
-        </Container>
+        </div>
+        </>
     );
 }
 

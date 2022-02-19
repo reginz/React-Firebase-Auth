@@ -14,7 +14,6 @@ function SingleOil() {
     const url = window.location.href;
     const currentOil = url.split("/oil-details/")[1].split("%20").join(" ");
     const [oil, setOil] = useState()
-    const [props, setProps] = useState()
 
     useEffect(() => {
         const oilCreds = async () => {
