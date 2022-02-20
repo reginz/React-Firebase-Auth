@@ -15,22 +15,16 @@
     --gray: #C9C9CB !important;
     --dark-gray: #79797a !important;
 }
-.sidebar-custom{
-    height: 100%;
-    width: 270px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--gray);
-    overflow-x: hidden;
-    padding-top: 20px;
-    display: flex!important;
-    flex-direction: column;
-    justify-content: space-evenly;
+p, li, a{
+    font-family: 'Rubik', sans-serif;
 }
 
-.sidebar-inner{
-    height: auto;
-    width: 270px;
+.big-p{
+    font-size: 20px;
+}
+
+.logo{
+    font-size:40px;
+    color:var(--white);
+    font-family: 'Reem Kufi', sans-serif;
 }
