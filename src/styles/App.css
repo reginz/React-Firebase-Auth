@@ -28,3 +28,18 @@ p, li, a{
     color:var(--white);
     font-family: 'Reem Kufi', sans-serif;
 }
+
+.page-wrapper{
+    max-width:900px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin: 0 auto;
+}
+.page-container{
+    position: relative;
+    padding: 2em;
+    width: 100%;
+}

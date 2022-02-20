@@ -28,19 +28,9 @@ function OilLibraryCards() {
 
     return (
       <>
-       <div className='page-container' style={{ 
-            position: "relative",
-                        padding: "2em",
-                        width: "100%",
-                       }}>   
-        <div className='page-wrapper'
-        style={{maxWidth:"900px",  display: "flex",
-                        justifyContent: "center",
-                        alignItems:"center",
-                        flexDirection:"row",
-                        flexWrap:"wrap",
-                        gap: "3em",
-                         margin:"0 auto"}}> 
+       <div className='page-container'>   
+        <div className='page-wrapper'> 
+        <div className='w-100'>
           <h2>Filter Oils</h2>
            <input className='searchbar mb-3'
               type="text" 
@@ -48,8 +38,11 @@ function OilLibraryCards() {
               onChange={(event) => {
                 setSearch(event.target.value);
               }}/>
-          <h2>Oil Library</h2>
-            <div className='d-flex'>
+          </div>
+          
+          <div className='w-100'>
+          <h2 className='mb-3'>Oil Library</h2>
+            <div className='row'>
 
               {oilData && oilData.filter((data)=>{
                     if (setSearch === ("")){
@@ -64,16 +57,18 @@ function OilLibraryCards() {
               .map((data)=>{
                  var oilName = data && data.name
                  var family = data && data.family
-                 
+                 var color = data && data.color
                   return(
-                      <div>
-                      <OilCard 
-                      route={oilName}
-                      family={family}
-                      name={oilName.toUpperCase()} />
+                      <div className='col-md'>
+                        <OilCard 
+                        color={color}
+                        route={oilName}
+                        family={family}
+                        name={oilName.toUpperCase()} />
                       </div>
                   )
               })}
+              </div>
               </div>
               </div>
             

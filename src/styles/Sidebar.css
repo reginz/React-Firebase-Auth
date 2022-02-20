@@ -12,6 +12,15 @@
     border-radius:0  25px  25px 0;
 }
 
+.list-item{
+    gap:1em;
+    padding:.5em 1em;
+}
+.active{
+    border-radius: 25px 0 0 25px;
+    background:var(--white);
+    color:var(--purple) !important;
+}
 .sidebar-custom__middle, .sidebar-custom__middle, .sidebar-custom__buttom{
     height: auto;
     width: 100%;
@@ -47,6 +56,8 @@
 .sidebar-custom__upper{
     height:40%;
     justify-content:space-evenly;
+    padding-left: 2em;
+    width: 100%;
 }
 
 
@@ -62,4 +73,5 @@
     border-radius: 25px;
     padding: .2em 2em;
     color:var(--white);
+    width: max-content;
 }
