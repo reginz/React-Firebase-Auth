@@ -26,6 +26,28 @@ function OilLibraryCards() {
         cardData();
       }, []);
 
+    async function filterEsstential(checkbox){
+      const checkedData = await db
+            .collection("Oils")
+            .where("type" , "==" , "essential")
+            .get();
+      const intialData = await db
+      .collection("Oils")
+      .get();
+      if(checkbox.checked == true){
+        setOilData(
+          checkedData.docs.map((doc)=>{
+            return doc.data()
+        }))
+      }else{
+        setOilData(
+          intialData.docs.map((doc) => {
+            return doc.data();
+          })
+        );
+      }
+    }
+
     return (
       <>
        <div className='page-container'>   
@@ -38,6 +60,10 @@ function OilLibraryCards() {
               onChange={(event) => {
                 setSearch(event.target.value);
               }}/>
+              <input id='essential-oils' type='checkbox'
+              onChange={filterEsstential()} />
+              <label for="essential-oils" 
+              className='filter-item pl-2 align-items-center'>Essantial Oils</label>
           </div>
           
           <div className='w-100'>

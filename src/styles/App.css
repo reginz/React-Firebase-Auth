@@ -28,9 +28,11 @@ p, li, a{
     color:var(--white);
     font-family: 'Reem Kufi', sans-serif;
 }
-
+.filter-item{
+    color:var(--dark-gray);
+}
 .page-wrapper{
-    max-width:900px;
+    max-width:1000px;
     display: flex;
     justify-content: center;
     flex-direction: row;

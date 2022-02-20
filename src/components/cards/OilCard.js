@@ -10,20 +10,20 @@ function OilCard(props) {
     }
     if(props.color==="pink"){
         var color = "#EBAFD1"
-
     }
     if(props.color === "green"){
         var color = "#95D6A6"
     }
+    var shadow = `0px 20px 12px -12px ${color}`
 
     return (
         <a href={'/oil-details/'+ props.route}>
             <div className='oil-card'
             style={{
                 backgroundColor: color,
-                
+                boxShadow: shadow
             }}>
-                <p>{props.name}</p>
+                <p className='card-title'>{props.name}</p>
                 <p>family: {props.family}</p>
             </div>
         </a>
