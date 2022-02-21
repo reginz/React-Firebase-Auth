@@ -6,6 +6,7 @@ import 'firebase/firestore'
 import PropsCard from '../components/cards/PropsCard';
 import ComponentsCard from '../components/cards/ComponentsCard';
 import SaveOil from '../components/SaveOil';
+import Sidebar from '../components/cards/Sidebar';
 
 const db = app.firestore();
 
@@ -33,8 +34,11 @@ function SingleOil() {
 
 
     return (
+      <div className='d-flex w-100 align-items-evenly'>
+        <Sidebar />
+        <div className='page-container'>   
+        <div className='page-wrapper flex-column'> 
         <div className='h-100'>
-            <Container>
                 {oil && oil.map((oil_info)=>{
                     return (
                         <>
@@ -59,8 +63,10 @@ function SingleOil() {
                         </>
                     )
                 })}
-            </Container>
         </div>
+        </div>
+        </div>
+      </div>
     );
 }
 

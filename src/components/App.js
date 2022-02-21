@@ -13,14 +13,10 @@ import '../styles/OilCard.css'
 import '../styles/ThreeView.css'
 import SingleOil from "../pages/SingleOil"
 import NotFound from "../pages/NotFound"
-import Navigation from '../components/Navigation'
-import Sidebar from "./cards/Sidebar"
-
 function App() {
   return (
    
       <div className="w-100" style={{backgroundColor:"var(--white)" }}>
-       
         <Router>
           <AuthProvider>
             <Switch>

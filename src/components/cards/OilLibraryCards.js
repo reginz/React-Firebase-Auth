@@ -26,7 +26,7 @@ function OilLibraryCards() {
         cardData();
       }, []);
 
-    async function filterEsstential(checkbox){
+    async function filterEsstential(){
       const checkedData = await db
             .collection("Oils")
             .where("type" , "==" , "essential")
@@ -34,7 +34,8 @@ function OilLibraryCards() {
       const intialData = await db
       .collection("Oils")
       .get();
-      if(checkbox.checked == true){
+      const checkbox = document.getElementById("essential-oils").checked
+      if(checkbox == true){
         setOilData(
           checkedData.docs.map((doc)=>{
             return doc.data()
