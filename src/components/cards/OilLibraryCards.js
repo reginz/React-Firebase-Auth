@@ -62,7 +62,7 @@ function OilLibraryCards() {
                 setSearch(event.target.value);
               }}/>
               <input id='essential-oils' type='checkbox'
-              onChange={filterEsstential()} />
+              onChange={filterEsstential} />
               <label for="essential-oils" 
               className='filter-item pl-2 align-items-center'>Essantial Oils</label>
           </div>

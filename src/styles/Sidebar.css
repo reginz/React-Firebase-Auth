@@ -75,3 +75,9 @@
     color:var(--white);
     width: max-content;
 }
+
+@media screen and (max-width: 1200px){
+    .sidebar-custom-wrapper{
+        display:none !important;
+    }
+}
