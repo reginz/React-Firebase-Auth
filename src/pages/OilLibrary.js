@@ -1,6 +1,6 @@
 import React from 'react';
 import OilLibraryCards from '../components/cards/OilLibraryCards';
-import Sidebar from '../components/cards/Sidebar';
+import Sidebar from '../components/navigation/Sidebar';
 
 function OilLibrary() {
     return (
