@@ -5,7 +5,6 @@ import app from "../firebase";
 import "firebase/firestore";
 import PropsCard from "../components/cards/PropsCard";
 import ComponentsCard from "../components/cards/ComponentsCard";
-import SaveOil from "../components/SaveOil";
 import Sidebar from "../components/navigation/Sidebar";
 import Navigation from "../components/navigation/Navigation";
 import { useAuth } from "../contexts/AuthContext";
@@ -13,11 +12,10 @@ import { useAuth } from "../contexts/AuthContext";
 const db = app.firestore();
 
 function SingleOil() {
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
   const url = window.location.href;
   const currentOil = url.split("/oil-details/")[1].split("%20").join(" ");
   const [oil, setOil] = useState([]);
-  const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     const oilCreds = async () => {
@@ -28,20 +26,26 @@ function SingleOil() {
       setOil(
         oilData.docs.map((doc) => {
           return doc.data();
-        }),
-
-        // oilData.docs.map((doc) => {
-        //   doc.data().saves && doc.data().saves.map((saved) => {
-        //     if (saved.saved.includes(currentUser.uid)) {
-        //       setIsSaved(true);
-        //     }
-        //   });
-        // })
+        })
       );
     };
     oilCreds();
   }, []);
 
+  async function handleSave(){
+    oil && oil.map((oil_info) =>{
+      const setSaved = db.collection("Users").doc(currentUser.uid).collection("saved").doc(oil_info.oil_id).set({
+        oil_name: oil_info.name,
+        oil_id: oil_info.oil_id,
+        oil_props: oil_info.Properties,
+        oil_components: oil_info.components,
+        oil_family: oil_info.family,
+        oil_origin: oil_info.origin,
+        oil_aroma: oil_info.aroma
+      })
+      return setSaved
+    })
+  }
   return (
     <div className="d-flex page-nav-contaier w-100 align-items-evenly">
       <Sidebar />
@@ -53,23 +57,22 @@ function SingleOil() {
               oil.map((oil_info) => {
                 return (
                   <>
-                  
-                    <h1 className="text-center p-5">{oil_info.name}</h1>
-                    <div className="w-25 " >
-                    <hr className='orange-hr'></hr>
-                  </div>
-                    {isSaved ? <h1>Saved</h1> : <div></div>}
-                    <SaveOil
-                      oil_name={oil_info.name}
-                      oil_id={oil_info.oil_id}
-                    />
+                    <div className="pb-5">
+                      <h1 className="text-center pb-0  pt-5 ">
+                        {oil_info.name} <span><button onClick={handleSave}>save</button></span>
+                      </h1>
+                     
+                      <div className="w-25 m-auto">
+                        <hr className="orange-hr"></hr>
+                      </div>
+                    </div>
 
                     <InfoCard
                       family={oil_info.family}
                       origin={oil_info.origin}
                       aroma={oil_info.aroma}
                     />
-                    <div className="d-flex">
+                    <div className="d-flex pt-5">
                       <PropsCard properities={oil_info.Properties} />
 
                       <ComponentsCard properities={oil_info.components} />

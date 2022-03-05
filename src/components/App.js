@@ -13,6 +13,7 @@ import '../styles/OilCard.css'
 import '../styles/ThreeView.css'
 import SingleOil from "../pages/SingleOil"
 import NotFound from "../pages/NotFound"
+import Dashboard from "../pages/Dashboard"
 function App() {
   return (
    
@@ -23,6 +24,7 @@ function App() {
               <PrivateRoute exact path="/" component={OilLibrary} />
               <PrivateRoute path="/settings" component={Settings} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
               <PrivateRoute path="/oil-details/:id" component={SingleOil} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
