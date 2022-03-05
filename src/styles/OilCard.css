@@ -33,3 +33,9 @@
 #essential-oils{
     border: 0.5px solid var(--gray);
 }
+.saved-oils__container{
+    display:flex;
+    gap: 2em;
+    overflow-x: hidden;
+    
+}

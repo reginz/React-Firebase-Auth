@@ -5,7 +5,7 @@ import SavedOils from '../components/SavedOils';
 
 function Dashboard() {
     return (
-        <div>
+        <div className='d-flex page-nav-contaier w-100'>
             <Navigation />
             <Sidebar />
             <SavedOils />
