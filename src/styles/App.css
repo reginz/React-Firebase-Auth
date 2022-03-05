@@ -18,7 +18,9 @@
 p, li, a{
     font-family: 'Rubik', sans-serif;
 }
-
+h1, h2, h3{
+    font-family: 'Reem Kufi' , sans-serif;
+}
 .big-p{
     font-size: 20px;
 }

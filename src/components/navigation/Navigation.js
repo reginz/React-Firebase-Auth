@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar,Nav, Container} from 'react-bootstrap'
 function Navigation(props) {
     return (
-        <div>
+        <div className='only-mobile'>
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="/">Arotolia</Navbar.Brand>

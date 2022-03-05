@@ -7,7 +7,7 @@ import PropsCard from "../components/cards/PropsCard";
 import ComponentsCard from "../components/cards/ComponentsCard";
 import SaveOil from "../components/SaveOil";
 import Sidebar from "../components/navigation/Sidebar";
-import Navigation from "../components/navigation/Navbar";
+import Navigation from "../components/navigation/Navigation";
 import { useAuth } from "../contexts/AuthContext";
 
 const db = app.firestore();
@@ -30,21 +30,22 @@ function SingleOil() {
           return doc.data();
         }),
 
-        oilData.docs.map((doc) => {
-          doc.data().saves && doc.data().saves.map((saved) => {
-            if (saved.includes(currentUser.uid)) {
-              setIsSaved(true);
-            }
-          });
-        })
+        // oilData.docs.map((doc) => {
+        //   doc.data().saves && doc.data().saves.map((saved) => {
+        //     if (saved.saved.includes(currentUser.uid)) {
+        //       setIsSaved(true);
+        //     }
+        //   });
+        // })
       );
     };
     oilCreds();
   }, []);
 
   return (
-    <div className="d-flex w-100 align-items-evenly">
+    <div className="d-flex page-nav-contaier w-100 align-items-evenly">
       <Sidebar />
+      <Navigation />
       <div className="page-container">
         <div className="page-wrapper flex-column">
           <div className="h-100">
@@ -52,7 +53,11 @@ function SingleOil() {
               oil.map((oil_info) => {
                 return (
                   <>
-                    <h1>{oil_info.name}</h1>
+                  
+                    <h1 className="text-center p-5">{oil_info.name}</h1>
+                    <div className="w-25 " >
+                    <hr className='orange-hr'></hr>
+                  </div>
                     {isSaved ? <h1>Saved</h1> : <div></div>}
                     <SaveOil
                       oil_name={oil_info.name}

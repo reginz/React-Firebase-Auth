@@ -2,7 +2,7 @@ import React from "react"
 import Signup from "./Signup"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Dashboard from "./Dashboard"
+import Settings from "../pages/Settings"
 import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
@@ -21,7 +21,7 @@ function App() {
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={OilLibrary} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/settings" component={Settings} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <PrivateRoute path="/oil-details/:id" component={SingleOil} />
               <Route path="/signup" component={Signup} />

@@ -10,36 +10,37 @@ function SaveOil(props) {
   const [savedUsers, setSavedUsers] = useState([]);
 
   useEffect(() => {
-      const getSaved = async () =>{
-        const oil = await db
+    const getSaved = async () => {
+      const oil = await db
         .collection("Oils")
         .where("name", "==", props.oil_name)
         .get();
       setSavedUsers(
         oil.docs.map((doc) => {
-          return doc.data().saves;
+          return doc.data();
         })
       );
-      }
-      getSaved();
-  },[]);
+    };
+    getSaved();
+  }, []);
 
-  async function saveOil() {
-    var setArray = []
-    setArray = savedUsers
-    setArray.push([currentUser.uid])
-    console.log(setArray)
+  // async function saveOil() {
+  //   savedUsers &&
+  //     savedUsers.map((user) => {
+  //       var setArray = user.saves;
+  //       setArray.saved = "currentUser.uid";
+  //       var cart = [];
+  //       cart.push(setArray);
+  //       console.log(setArray);
 
-    await db
-      .collection("Oils")
-      .doc(props.oil_name)
-      .update({
-        saves: setArray,
-      });
-  }
+  //       db.collection("Oils").doc(props.oil_name).update({
+  //         saves: { setArray },
+  //       });
+  //     });
+  // }
   return (
     <div>
-      <button onClick={saveOil}>Save oil</button>
+      {/* <button onClick={saveOil}>Save oil</button> */}
     </div>
   );
 }
