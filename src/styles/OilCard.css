@@ -1,41 +1,46 @@
-.oil-card{
-    width: 275px;
-    max-width: 275px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    padding: 1em 1.5em;
-    margin-bottom: 2em !important;
-    color: var(--white);
+.oil-card {
+  width: 275px;
+  max-width: 275px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 1em 1.5em;
+  margin-bottom: 2em !important;
+  color: var(--white);
 }
-.info-card{
-    display: flex;
-    gap: 2em;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    padding: 1em 1.5em;
-    background-color: #fff;
-    color: var(--dark-gray);
+.info-card {
+  display: flex;
+  gap: 2em;
+  justify-content: space-evenly;
+  border-radius: 25px;
+  padding: 1em 1.5em;
+  background-color: #fff;
+  color: var(--dark-gray);
 }
-.orange-hr{
-    border: 1px solid var(--orange);
-    border-radius: 4px;
-    width: 100%;
+.orange-hr {
+  border: 1px solid var(--orange);
+  border-radius: 4px;
+  width: 100%;
 }
-.props-card-puprle{
-    background-color: var(--purple);
+.props-card-puprle {
+  background-color: var(--purple);
 }
-.card-title{
-    font-size: 20px;
-    font-family: 'Rubik', sans-serif;
+.card-title {
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
 }
 
-#essential-oils{
-    border: 0.5px solid var(--gray);
+#essential-oils {
+  border: 0.5px solid var(--gray);
 }
-.saved-oils__container{
-    display:flex;
-    gap: 2em;
-    overflow-x: hidden;
-    
+.saved-oils__container {
+  display: flex;
+  gap: 2em;
+  overflow-x: scroll;
+  max-width: 75vw;
+}
+.empty-card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2em;
 }
