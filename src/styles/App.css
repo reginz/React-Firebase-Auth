@@ -1,52 +1,65 @@
-:root{
-    --purple: #B682D5 !important;
-    --dark-purple: #9268aa !important;
-    --soft-purple: #dbc2ea !important;
-    --pink: #EBAFD1 !important;
-    --dark-pink: #E592BE !important;
-    --blue: #B4D9F0 !important;
-    --turquise: #ABFFF3 !important;
-    --green: #95D6A6 !important;
-    --dark-green: #80CB95 !important;
-    --yellow: #F8E89C !important;
-    --orange: #EFC17A !important;
-    --soft-orange: #f1ce95 !important;
-    --white: #F8F7FC !important;
-    --gray: #C9C9CB !important;
-    --dark-gray: #79797a !important;
+:root {
+  --purple: #b682d5 !important;
+  --dark-purple: #9268aa !important;
+  --soft-purple: #dbc2ea !important;
+  --pink: #ebafd1 !important;
+  --dark-pink: #e592be !important;
+  --blue: #b4d9f0 !important;
+  --turquise: #abfff3 !important;
+  --green: #95d6a6 !important;
+  --dark-green: #80cb95 !important;
+  --yellow: #f8e89c !important;
+  --orange: #efc17a !important;
+  --soft-orange: #f1ce95 !important;
+  --white: #f8f7fc !important;
+  --gray: #c9c9cb !important;
+  --dark-gray: #79797a !important;
 }
-p, li, a{
-    font-family: 'Rubik', sans-serif;
+p,
+li,
+a {
+  font-family: "Rubik", sans-serif;
 }
-a:hover{
-    text-decoration: none !important;
+a:hover {
+  text-decoration: none !important;
 }
-h1, h2, h3{
-    font-family: 'Reem Kufi' , sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Reem Kufi", sans-serif;
 }
-.big-p{
-    font-size: 20px;
+body{
+    background-color: var(--white) !important;
 }
-
-.logo{
-    font-size:40px;
-    color:var(--white);
-    font-family: 'Reem Kufi', sans-serif;
+.big-p {
+  font-size: 20px;
 }
-.filter-item{
-    color:var(--dark-gray);
+.small-text {
+  font-size: 15px;
+  color: var(--gray);
+  padding: 0;
+  text-transform: uppercase;
+  margin: 0;
 }
-.page-wrapper{
-    max-width:1000px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3em;
-    margin: 0 auto;
+.logo {
+  font-size: 40px;
+  color: var(--white);
+  font-family: "Reem Kufi", sans-serif;
 }
-.page-container{
-    position: relative;
-    padding: 2em;
-    width: 100%;
+.filter-item {
+  color: var(--dark-gray);
+}
+.page-wrapper {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin: 0 auto;
+}
+.page-container {
+  position: relative;
+  padding: 2em;
+  width: 100%;
 }

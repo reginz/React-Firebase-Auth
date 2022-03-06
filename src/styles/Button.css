@@ -1,11 +1,12 @@
-#btn-primary-custom{
-    background-color: var(--purple);
-    color:var(--white);
-    border-color: var(--purple);
+#btn-primary-custom {
+  background-color: var(--purple);
+  color: var(--white);
+  border-color: var(--purple);
+  border-radius: 25px;
 }
-#btn-primary-custom:focus{
-    box-shadow: 0 0 0 0.2rem var(--soft-purple);
+#btn-primary-custom:focus {
+  box-shadow: 0 0 0 0.2rem var(--soft-purple);
 }
-.btn-link{
-    color: var(--purple) !important;
+.btn-link {
+  color: var(--purple) !important;
 }

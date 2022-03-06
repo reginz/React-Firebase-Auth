@@ -1,6 +1,17 @@
-.searchbar{
-    width: 100%;
-    border-radius: 25px;
-    border: none;
-    padding: .7em 2em;
+.searchbar {
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  padding: 0.7em 2em;
+}
+
+.input-field {
+  padding: 0.5em;
+  border-radius: 25px;
+  border: 1px solid var(--gray);
+}
+
+.input-field::placeholder {
+  padding: 0.5em;
+  color: var(--gray);
 }
