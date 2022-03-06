@@ -1,8 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "../contexts/AuthContext";
+import app from "../firebase";
 import PatientCard from "./cards/PatientCard";
 
 function PatientsLayout(props) {
-    const [search, setSearch] = useState()
+  const db = app.firestore();
+  const [search, setSearch] = useState();
+  const [patients, setPatients] = useState([]);
+  const { currentUser } = useAuth();
+
+  useEffect(() => {
+    const getData = async () => {
+      db.collection("Users")
+        .doc(currentUser.uid)
+        .collection("patients")
+        .get()
+        .then((querySnapshot) => {
+          // doc.data() is never undefined for query doc snapshots
+          setPatients(
+            querySnapshot.docs.map((doc) => {
+              return doc.data();
+            })
+          );
+        });
+    };
+    getData();
+  }, []);
+
   return (
     <div className="page-container">
       <div className="page-wrapper">
@@ -32,6 +56,7 @@ function PatientsLayout(props) {
             Create Patient
           </button>
         </div>
+
         <div className="empty-card w-100">
           <div className="patient-header__wrapper text-center">
             <div>
@@ -49,14 +74,26 @@ function PatientsLayout(props) {
           </div>
           <hr className="orange-hr"></hr>
           <input
-              className="searchbar input-field mb-5"
-              type="text"
-              placeholder=" Search Patients by Name"
-              onChange={(event) => {
-                setSearch(event.target.value);
-              }}
-            />
-            <PatientCard />
+            className="searchbar input-field mb-5"
+            type="text"
+            placeholder=" Search Patients by Name"
+            onChange={(event) => {
+              setSearch(event.target.value);
+            }}
+          />
+          {patients &&
+            patients.map((patient) => {
+              return (
+                <>
+                  <PatientCard
+                    age={patient.patient_age}
+                    treatment={patient.patient_current_treatment}
+                    name={patient.patient_name}
+                  />
+                  <hr></hr>
+                </>
+              );
+            })}
         </div>
       </div>
     </div>

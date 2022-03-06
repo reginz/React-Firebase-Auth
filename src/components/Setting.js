@@ -19,7 +19,7 @@ export default function Setting() {
       setError("Failed to log out");
     }
   }
-
+console.log(currentUser.uid)
   return (
     <div className="d-flex flex-column w-100 p-5">
       <Card>
