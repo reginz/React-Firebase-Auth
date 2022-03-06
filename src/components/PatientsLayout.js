@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import PatientCard from "./cards/PatientCard";
 
 function PatientsLayout(props) {
+    const [search, setSearch] = useState()
   return (
     <div className="page-container">
       <div className="page-wrapper">
@@ -13,7 +15,7 @@ function PatientsLayout(props) {
               width: "20%",
               justifyContent: "center",
               alignItems: "center",
-              gap: "1em"
+              gap: "1em",
             }}
             className="btn"
           >
@@ -29,6 +31,32 @@ function PatientsLayout(props) {
             </svg>
             Create Patient
           </button>
+        </div>
+        <div className="empty-card w-100">
+          <div className="patient-header__wrapper text-center">
+            <div>
+              <small className="small-text">total patient count</small>
+              <h1>17</h1>
+            </div>
+            <div>
+              <small className="small-text">avarage age</small>
+              <h1>39</h1>
+            </div>
+            <div>
+              <small className="small-text">completed treatments</small>
+              <h1>4</h1>
+            </div>
+          </div>
+          <hr className="orange-hr"></hr>
+          <input
+              className="searchbar input-field mb-5"
+              type="text"
+              placeholder=" Search Patients by Name"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            />
+            <PatientCard />
         </div>
       </div>
     </div>

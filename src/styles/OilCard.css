@@ -44,3 +44,8 @@
   border-radius: 25px;
   padding: 2em;
 }
+.patient-header__wrapper{
+  display:flex;
+  gap: 2em;
+  justify-content: space-between;
+}
