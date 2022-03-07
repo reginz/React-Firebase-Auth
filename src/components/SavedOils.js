@@ -24,7 +24,7 @@ function SavedOils(props) {
         });
     };
     getData();
-  },[]);
+  }, []);
   return (
     <div className="d-flex flex-column w-100 p-5">
       <input

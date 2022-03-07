@@ -28,8 +28,8 @@ h2,
 h3 {
   font-family: "Reem Kufi", sans-serif;
 }
-body{
-    background-color: var(--white) !important;
+body {
+  background-color: var(--white) !important;
 }
 .big-p {
   font-size: 20px;
@@ -63,6 +63,19 @@ body{
   padding: 2em;
   width: 100%;
 }
-.gray-p{
+.gray-p {
   color: var(--dark-gray);
+}
+.modal-content {
+  border: none !important;
+  border-radius: 25px !important;
+}
+.modal-dialog {
+  min-width: 800px;
+}
+
+@media screen and (max-width: 800px) {
+  .modal-dialog {
+    min-width: initial;
+  }
 }

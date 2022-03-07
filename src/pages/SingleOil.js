@@ -37,7 +37,6 @@ function SingleOil() {
     };
     oilCreds();
   }, []);
-  console.log(id);
   async function handleSave() {
     oil &&
       oil.map((oil_info) => {

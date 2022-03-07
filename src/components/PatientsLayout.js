@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Modal } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import app from "../firebase";
 import PatientCard from "./cards/PatientCard";
+import PersonalHealthInfo from "./cards/PersonalHealthInfo";
 
 function PatientsLayout(props) {
   const db = app.firestore();
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
   const [patients, setPatients] = useState([]);
   const { currentUser } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
+  const nameRef = useRef();
+  const ageRef = useRef();
+  const treatmentRef = useRef();
 
   useEffect(() => {
     const getData = async () => {
@@ -33,6 +39,7 @@ function PatientsLayout(props) {
         <div className="w-100 text-left d-flex justify-content-between">
           <h2>Patients</h2>
           <button
+            onClick={() => setIsOpen(true)}
             id="btn-primary-custom"
             style={{
               display: "flex",
@@ -82,7 +89,17 @@ function PatientsLayout(props) {
             }}
           />
           {patients &&
-            patients.map((patient) => {
+            patients.filter((patient) => {
+                if (setSearch === "") {
+                  return patient;
+                } else if (
+                  patient &&
+                  patient.patient_name.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return patient;
+                }
+                return null;
+              }).map((patient) => {
               return (
                 <>
                   <PatientCard
@@ -95,6 +112,41 @@ function PatientsLayout(props) {
               );
             })}
         </div>
+        <Modal onHide={() => setIsOpen(false)} show={isOpen}>
+          <Modal.Header closeButton>
+            <h2>Create New Patient</h2>
+          </Modal.Header>
+          <Modal.Body className="w-100">
+            <PersonalHealthInfo
+              ageRef={ageRef}
+              nameRef={nameRef}
+              treatmentRef={treatmentRef}
+              buttonText="Create Patient"
+              treatment={true}
+            />
+            <button
+              onClick={async function handleNewPatient() {
+                try {
+                  await db
+                    .collection("Users")
+                    .doc(currentUser.uid)
+                    .collection("patients")
+                    .doc()
+                    .set({
+                      patient_age: ageRef.current.value,
+                      patient_name: nameRef.current.value,
+                      patient_current_treatment: treatmentRef.current.value,
+                    });
+                  console.log("success");
+                } catch {
+                  console.log("error");
+                }
+              }}
+            >
+              click
+            </button>
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );
