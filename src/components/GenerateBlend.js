@@ -6,7 +6,7 @@ function GenerateBlend(props) {
   return (
     <div className="d-flex flex-column w-100 p-5">
       <h1 className="mb-4">Generate Custom Blend</h1>
-      <div className="empty-card">
+      <div className="empty-card w-100">
         <form>
           <div className="d-flex w-100 align-items-between">
             <div className="w-50">
