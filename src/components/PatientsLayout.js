@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Modal } from "react-bootstrap";
+import { Alert, Button, Modal } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import app from "../firebase";
 import PatientCard from "./cards/PatientCard";
@@ -8,6 +8,7 @@ import PersonalHealthInfo from "./cards/PersonalHealthInfo";
 function PatientsLayout(props) {
   const db = app.firestore();
   const [search, setSearch] = useState("");
+  const [success, setSuccess] = useState(false);
   const [patients, setPatients] = useState([]);
   const { currentUser } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
@@ -89,34 +90,51 @@ function PatientsLayout(props) {
             }}
           />
           {patients &&
-            patients.filter((patient) => {
+            patients
+              .filter((patient) => {
                 if (setSearch === "") {
                   return patient;
                 } else if (
                   patient &&
-                  patient.patient_name.toLowerCase().includes(search.toLowerCase())
+                  patient.patient_name
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
                 ) {
                   return patient;
                 }
                 return null;
-              }).map((patient) => {
-              return (
-                <>
-                  <PatientCard
-                    age={patient.patient_age}
-                    treatment={patient.patient_current_treatment}
-                    name={patient.patient_name}
-                  />
-                  <hr></hr>
-                </>
-              );
-            })}
+              })
+              .map((patient) => {
+                return (
+                  <>
+                    <PatientCard
+                      age={patient.patient_age}
+                      treatment={patient.patient_current_treatment}
+                      name={patient.patient_name}
+                    />
+                    <hr></hr>
+                  </>
+                );
+              })}
         </div>
         <Modal onHide={() => setIsOpen(false)} show={isOpen}>
           <Modal.Header closeButton>
             <h2>Create New Patient</h2>
           </Modal.Header>
           <Modal.Body className="w-100">
+            {success ? (
+              <Alert className="d-flex justify-content-between align-items-center" variant="success">
+                New patient created successfully
+                <Button
+                  variant="success"
+                  onClick={() => (window.location.href = "/patients")}
+                >
+                  Back to Patients
+                </Button>
+              </Alert>
+            ) : (
+              <></>
+            )}
             <PersonalHealthInfo
               ageRef={ageRef}
               nameRef={nameRef}
@@ -125,30 +143,30 @@ function PatientsLayout(props) {
               treatment={true}
             />
             <div className="d-flex justify-content-end">
-            <button
-            id="btn-primary-custom" className="btn mt-3"
-              onClick={async function handleNewPatient() {
-                try {
-                  await db
-                    .collection("Users")
-                    .doc(currentUser.uid)
-                    .collection("patients")
-                    .doc()
-                    .set({
-                      patient_age: ageRef.current.value,
-                      patient_name: nameRef.current.value,
-                      patient_current_treatment: treatmentRef.current.value,
-                    });
-                  console.log("success");
-                } catch {
-                  console.log("error");
-                }
-              }}
-            >
-              Create Patient
-            </button>
-          </div>
-           
+              <button
+                id="btn-primary-custom"
+                className="btn mt-3"
+                onClick={async function handleNewPatient() {
+                  try {
+                    await db
+                      .collection("Users")
+                      .doc(currentUser.uid)
+                      .collection("patients")
+                      .doc()
+                      .set({
+                        patient_age: ageRef.current.value,
+                        patient_name: nameRef.current.value,
+                        patient_current_treatment: treatmentRef.current.value,
+                      });
+                    setSuccess(true);
+                  } catch {
+                    console.log("error");
+                  }
+                }}
+              >
+                Create Patient
+              </button>
+            </div>
           </Modal.Body>
         </Modal>
       </div>
