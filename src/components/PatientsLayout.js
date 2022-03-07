@@ -124,7 +124,9 @@ function PatientsLayout(props) {
               buttonText="Create Patient"
               treatment={true}
             />
+            <div className="d-flex justify-content-end">
             <button
+            id="btn-primary-custom" className="btn mt-3"
               onClick={async function handleNewPatient() {
                 try {
                   await db
@@ -143,8 +145,10 @@ function PatientsLayout(props) {
                 }
               }}
             >
-              click
+              Create Patient
             </button>
+          </div>
+           
           </Modal.Body>
         </Modal>
       </div>

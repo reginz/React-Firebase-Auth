@@ -6,7 +6,9 @@ function GenerateBlend(props) {
     <div className="d-flex flex-column w-100 p-5">
       <h1 className="mb-4">Generate Custom Blend</h1>
       <div className="empty-card"> 
-        <PersonalHealthInfo buttonText="Generate Blend" />
+        <PersonalHealthInfo 
+        treatment={false}
+        buttonText="Generate Blend" />
       </div>
     </div>
   );

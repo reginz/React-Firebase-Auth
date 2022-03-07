@@ -43,7 +43,7 @@ function PersonalHealthInfo(props) {
                 ></input>
               </div>
             </div>
-            <div className="w-50">
+            {/* <div className="w-50">
               <small className="small-text">Allergies</small>
               <div>
                 <hr
@@ -59,10 +59,10 @@ function PersonalHealthInfo(props) {
                   setSearch(event.target.value);
                 }}
               />
-            </div>
+            </div> */}
           </div>
 
-          <div className=" mt-5">
+          {/* <div className=" mt-5">
             <small className="small-text">effects</small>
             <div>
               <hr
@@ -78,7 +78,7 @@ function PersonalHealthInfo(props) {
                 setSearch(event.target.value);
               }}
             />
-          </div>
+          </div> */}
           {props.treatment ? (
             <div className=" mt-5">
               <small className="small-text">treatment</small>
@@ -98,12 +98,15 @@ function PersonalHealthInfo(props) {
           ) : (
             <></>
           )}
-
-          <div className="d-flex justify-content-end">
-            <button id="btn-primary-custom" className="btn mt-3">
-              {props.buttonText}
-            </button>
-          </div>
+          {props.treatment === false ? (
+            <div className="d-flex justify-content-end">
+              <button id="btn-primary-custom" className="btn mt-3">
+                {props.buttonText}
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
         </form>
       </div>
     </div>
