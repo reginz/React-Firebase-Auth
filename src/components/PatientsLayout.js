@@ -3,6 +3,7 @@ import { Alert, Button, Modal } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import app from "../firebase";
 import PatientCard from "./cards/PatientCard";
+import PatientInfo from "./cards/PatientInfo";
 import PersonalHealthInfo from "./cards/PersonalHealthInfo";
 
 function PatientsLayout(props) {
@@ -135,7 +136,7 @@ function PatientsLayout(props) {
             ) : (
               <></>
             )}
-            <PersonalHealthInfo
+            <PatientInfo
               ageRef={ageRef}
               nameRef={nameRef}
               treatmentRef={treatmentRef}
