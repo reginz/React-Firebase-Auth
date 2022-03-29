@@ -10,14 +10,14 @@ function PropsCard(props) {
       open="true" 
       trigger="Properities">
 
-        {properities.map((properity)=>{
+        {/* {properities.map((properity)=>{
           return(
             <div className='d-flex justify-content-between properities'>
               <p style={{padding:"0",margin:"0"}}>{properity.name}</p>
               <p style={{padding:"0",margin:"0"}}>%{properity.value}</p>
             </div>
           )
-        })}
+        })} */}
 
     </Collapsible>
     </div>

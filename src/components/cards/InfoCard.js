@@ -22,11 +22,11 @@ function InfoCard(props) {
                     <p>AROMA</p>
                     <hr className='orange-hr'></hr>
                     <ul>
-                   {props.aroma.map((a) => {
+                   {/* {props.aroma.map((a) => {
                        return(
                            <li>{a}</li>
                        )
-                   })}
+                   })} */}
                     </ul>
                     
                 </div>

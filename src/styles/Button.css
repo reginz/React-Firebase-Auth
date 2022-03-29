@@ -10,3 +10,9 @@
 .btn-link {
   color: var(--purple) !important;
 }
+.save-btn{
+  background-color: transparent !important;
+  border:none;
+  padding:0;
+  margin:0;
+}

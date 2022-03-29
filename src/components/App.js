@@ -15,6 +15,7 @@ import SingleOil from "../pages/SingleOil"
 import NotFound from "../pages/NotFound"
 import Dashboard from "../pages/Dashboard"
 import Patients from "../pages/Patients"
+import WriteDb from "../service/WriteDb"
 function App() {
   return (
    
@@ -29,6 +30,7 @@ function App() {
               <PrivateRoute path="/patients" component={Patients} />
               <PrivateRoute path="/oil-details/:id" component={SingleOil} />
               <Route path="/signup" component={Signup} />
+              <Route path="/a" component={WriteDb} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route component={NotFound} />
