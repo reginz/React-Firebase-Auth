@@ -65,7 +65,7 @@ function PatientsLayout(props) {
             Create Patient
           </button>
         </div>
-
+            {/* TODO: Make it dynamic */}
         <div className="empty-card w-100">
           <div className="patient-header__wrapper text-center">
             <div>
