@@ -39,7 +39,7 @@ export default function PersonalHealthInfo() {
             id="textarea"
             className="input-field w-100"
             required
-            placeholder="EX: I have a headache"
+            placeholder="EX: Baş ağrısı"
           ></textarea>
 
           <br></br>

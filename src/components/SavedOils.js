@@ -52,7 +52,7 @@ function SavedOils(props) {
             })
             .map((oil) => {
               var oilName = oil && oil.oil_name;
-              var family = oil && oil.oil_family;
+              var family = oil && oil.oil_plant;
               var color = oil && oil.oil_color;
               return (
                 <div>

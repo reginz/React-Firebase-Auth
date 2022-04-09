@@ -1,21 +1,25 @@
-.properities{
+.properities {
   padding: 0 2em;
 }
-.Collapsible{
+.Collapsible {
   width: 90%;
-  background-color: var(--purple);
+  background-color: var(--soft-purple);
   border-radius: 25px;
+  padding: 15px;
 }
-.Collapsible__trigger{
+.Collapsible__trigger {
   width: 100%;
   padding: 0 1em;
+  font-size: 16px;
+  text-transform: uppercase;
+  /* color: #79797A; */
 }
-.variant-container{
+.variant-container {
   width: 100%;
 }
-.variant-container .Collapsible{
-  background-color: var(--orange);
+.variant-container .Collapsible {
+  background-color: var(--soft-orange);
 }
-.no-variant-container{
+.no-variant-container {
   width: 100%;
 }
