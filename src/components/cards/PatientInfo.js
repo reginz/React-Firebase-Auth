@@ -42,7 +42,7 @@ function PatientInfo(props) {
                   ></input>
                 </div>
               </div>
-              {/* <div className="w-50">
+              <div className="w-50">
                 <small className="small-text">Allergies</small>
                 <div>
                   <hr
@@ -58,10 +58,10 @@ function PatientInfo(props) {
                     setSearch(event.target.value);
                   }}
                 />
-              </div> */}
+              </div>
             </div>
   
-            {/* <div className=" mt-5">
+            <div className=" mt-5">
               <small className="small-text">effects</small>
               <div>
                 <hr
@@ -77,7 +77,7 @@ function PatientInfo(props) {
                   setSearch(event.target.value);
                 }}
               />
-            </div> */}
+            </div>
             {props.treatment ? (
               <div className=" mt-5">
                 <small className="small-text">treatment</small>

@@ -16,6 +16,7 @@ import NotFound from "../pages/NotFound"
 import Dashboard from "../pages/Dashboard"
 import Patients from "../pages/Patients"
 import Glossary from "../pages/Glossary"
+import Components from "../pages/Components"
 function App() {
   return (
    
@@ -29,7 +30,8 @@ function App() {
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <PrivateRoute path="/patients" component={Patients} />
               <PrivateRoute path="/oil-details/:id" component={SingleOil} />
-              <PrivateRoute path="/glossary" component={Glossary} />
+              <PrivateRoute path="/dictionary" component={Glossary} />
+              <PrivateRoute path="/components" component={Components} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />

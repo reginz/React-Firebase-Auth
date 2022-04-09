@@ -8,7 +8,7 @@ import ComponentsCard from "../components/cards/ComponentsCard";
 import Sidebar from "../components/navigation/Sidebar";
 import Navigation from "../components/navigation/Navigation";
 import { useAuth } from "../contexts/AuthContext";
-
+import "../styles/OilCard.css";
 const db = app.firestore();
 
 function SingleOil() {
@@ -130,14 +130,58 @@ function SingleOil() {
                     </div>
 
                     <InfoCard
-                      family={oil_info.oil_family}
-                      origin={oil_info.oil_origin}
-                      aroma={oil_info.oil_aroma}
+                      family={oil_info.oil_plant}
+                      origin={oil_info.oil_obtained}
+                      aroma={oil_info.oil_obtaining_methods}
                     />
                     <div className="d-flex pt-5">
-                      <PropsCard properities={oil_info.oil_props} />
+                      <PropsCard
+                        properities={oil_info.oil_application_method}
+                      />
 
                       <ComponentsCard properities={oil_info.oil_components} />
+                    </div>
+                    <div className="info-card mt-5 ">
+                      {oil_info.oil_warn.map((a) => {
+                        return (
+                          <ul className="emoji">
+                            <li>{a}</li>
+                          </ul>
+                        );
+                      })}
+                    </div>
+                    <div
+                      style={{ gap: "0", gridGap: "0" }}
+                      className="info-card flex-column mt-5"
+                    >
+                      <div>
+                        <p>CAUTION</p>
+                        <hr className="orange-hr"></hr>
+                      </div>
+
+                      <div>
+                        🧪 {oil_info.oil_interactions}
+                        <br></br>
+                        🚫 {oil_info.oil_contraindications}
+                        <br></br>
+                        ☢️ {oil_info.oil_toxicity} <br></br>
+                        🤰 {oil_info.oil_pregnancy} <br></br>
+                        📦 {oil_info.oil_storage}
+                      </div>
+                    </div>
+
+                    <div
+                      className="info-card mt-5 flex-column"
+                      style={{ gap: "0", gridGap: "0" }}
+                    >
+                      <div>
+                      <p>REFERANCE</p>
+                      <hr className="orange-hr"></hr>
+                      </div>
+                     
+                      {oil_info.oil_literature.map((a) => {
+                        return <div>📚 {a}</div>;
+                      })}
                     </div>
                   </>
                 );

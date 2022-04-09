@@ -91,7 +91,7 @@ function OilLibraryCards() {
                   // Map cards
                   .map((data) => {
                     var oilName = data && data.oil_name;
-                    var family = data && data.oil_family;
+                    var family = data && data.oil_plant;
                     var color = data && data.oil_color;
                     return (
                       <div className="col-md">

@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import app from "../firebase";
 import GlossaryCard from "./cards/GlossaryCard";
 
-function GlossaryCards(props) {
+function ComponentsCards(props) {
   var db = app.firestore();
-  const [glossary, setGlossary] = useState();
+  const [components, setComponents] = useState();
   const [search, setSearch] = useState("");
+  const [info, setInfo] = useState();
+  const [str, setStr] = useState();
 
   useEffect(() => {
     const getData = async () => {
-      db.collection("Glossary")
+      db.collection("Components")
         .get()
         .then((querySnapshot) => {
           // doc.data() is never undefined for query doc snapshots
-          setGlossary(
+          setComponents(
             querySnapshot.docs.map((doc) => {
               var data = doc.data();
               return data;
@@ -26,7 +28,7 @@ function GlossaryCards(props) {
 
   return (
     <div className="page-container">
-      <h1>Dictionary</h1>
+      <h1>Components</h1>
 
       <input
         className="searchbar mb-4"
@@ -36,18 +38,14 @@ function GlossaryCards(props) {
           setSearch(event.target.value);
         }}
       />
-      {glossary &&
-        glossary
+      {components &&
+        components
           .filter((comp) => {
             if (setSearch === "") {
               return comp;
             } else if (
-              (comp &&
-                comp[" properties"]
-                  .toLowerCase()
-                  .includes(search.toLowerCase())) ||
-              (comp &&
-                comp["name"].toLowerCase().includes(search.toLowerCase()))
+              comp.name &&
+              comp.name.toLowerCase().includes(search.toLowerCase())
             ) {
               return comp;
             }
@@ -57,9 +55,10 @@ function GlossaryCards(props) {
             return (
               <div>
                 <GlossaryCard
-                  isGlossary={true}
+                  isGlossary={false}
+                  info={info}
                   name={comp["name"]}
-                  meaning={comp[" properties"]}
+                  meaning={comp.properties}
                 />
                 <hr className="orange-hr mb-5"></hr>
               </div>
@@ -69,4 +68,4 @@ function GlossaryCards(props) {
   );
 }
 
-export default GlossaryCards;
+export default ComponentsCards;

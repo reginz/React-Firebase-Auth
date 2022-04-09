@@ -46,7 +46,7 @@ export default function PersonalHealthInfo() {
 
           <div className="d-flex justify-content-end">
             <button id="btn-primary-custom" className="btn" type="submit">
-              Generate Blend
+              Send Complaint
             </button>
           </div>
         </form>

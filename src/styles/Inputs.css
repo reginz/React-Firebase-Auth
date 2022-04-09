@@ -1,7 +1,7 @@
 .searchbar {
   width: 100%;
   border-radius: 25px;
-  border: none;
+  border: 1px solid var(--gray);
   padding: 0.7em 2em;
 }
 

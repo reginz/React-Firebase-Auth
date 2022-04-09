@@ -14,7 +14,7 @@ function ComponentsCard(props) {
           return(
             <div className='d-flex justify-content-between properities'>
               <p style={{padding:"0",margin:"0"}}>{properity.name}</p>
-              <p style={{padding:"0",margin:"0"}}>%{properity.value}</p>
+              <p style={{padding:"0",margin:"0"}}>{properity.value}</p>
             </div>
           )
         })}

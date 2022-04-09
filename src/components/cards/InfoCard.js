@@ -7,27 +7,21 @@ function InfoCard(props) {
             className='info-card d-flex text-center'>
 
                 <div>
-                    <p>FAMILY</p>
+                    <p>OIL PLANT</p>
                     <hr className='orange-hr'></hr>
                     <p>{props.family}</p>
                 </div>
                 
                 <div>
-                    <p>ORIGIN</p>
+                    <p>OBTAINED FROM</p>
                     <hr className='orange-hr'></hr>
                     <p>{props.origin}</p>
                 </div>
 
                 <div>
-                    <p>AROMA</p>
+                    <p>METHOD</p>
                     <hr className='orange-hr'></hr>
-                    <ul>
-                   {/* {props.aroma.map((a) => {
-                       return(
-                           <li>{a}</li>
-                       )
-                   })} */}
-                    </ul>
+                    <p>{props.aroma}</p>
                     
                 </div>
                 

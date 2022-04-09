@@ -9,9 +9,16 @@
   .text{
     display: inline;
     width: 100%;
+    font-size:17px;
   }
     
   .read-or-hide{
     color: rgb(192,192,192);
     cursor: pointer;
+    width: 100px;
+    height:100px;
+  }
+
+  .variant{
+    color:white;
   }

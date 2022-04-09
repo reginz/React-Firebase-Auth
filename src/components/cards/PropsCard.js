@@ -8,16 +8,15 @@ function PropsCard(props) {
     <div className='no-variant-container'>
       <Collapsible
       open="true" 
-      trigger="Properities">
+      trigger="Usage">
 
-        {/* {properities.map((properity)=>{
+        {properities.map((properity)=>{
           return(
             <div className='d-flex justify-content-between properities'>
-              <p style={{padding:"0",margin:"0"}}>{properity.name}</p>
-              <p style={{padding:"0",margin:"0"}}>%{properity.value}</p>
+              <li style={{padding:"0",margin:"0"}}>{properity}</li>
             </div>
           )
-        })} */}
+        })}
 
     </Collapsible>
     </div>
