@@ -49,33 +49,33 @@ function OilLibraryCards() {
     <>
       <div className="page-container">
         <div className="page-wrapper">
-          <div className="w-100">
-            <h2>Filter Oils</h2>
+          <div className="w-100 ">
+              <h2>Filter Oils</h2>
 
-            <input
-              className="searchbar mb-3"
-              type="text"
-              placeholder=" Search Oils"
-              onChange={(event) => {
-                setSearch(event.target.value);
-              }}
-            />
-            <input
-              id="essential-oils"
-              type="checkbox"
-              onChange={filterEsstential}
-            />
-            <label
-              for="essential-oils"
-              className="filter-item pl-2 align-items-center"
-            >
-              Essantial Oils
-            </label>
+              <input
+                className="searchbar mb-3"
+                type="text"
+                placeholder=" Search Oils"
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                }}
+              />
+              <input
+                id="essential-oils"
+                type="checkbox"
+                onChange={filterEsstential}
+              />
+              <label
+                for="essential-oils"
+                className="filter-item pl-2 align-items-center"
+              >
+                Essantial Oils
+              </label>
           </div>
 
           <div className="w-100">
             <h2 className="mb-3">Oil Library</h2>
-            <div className="row">
+            <div className="row" >
               {oilData &&
                 oilData
                   .filter((data) => {
@@ -93,6 +93,7 @@ function OilLibraryCards() {
                     var oilName = data && data.oil_name;
                     var family = data && data.oil_plant;
                     var color = data && data.oil_color;
+
                     return (
                       <div className="col-md">
                         <OilCard

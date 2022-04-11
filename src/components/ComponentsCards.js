@@ -52,6 +52,7 @@ function ComponentsCards(props) {
             return null;
           })
           .map((comp) => {
+
             return (
               <div>
                 <GlossaryCard

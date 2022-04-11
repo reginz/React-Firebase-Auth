@@ -16,30 +16,46 @@ function PatientsLayout(props) {
   const nameRef = useRef();
   const ageRef = useRef();
   const treatmentRef = useRef();
+  const [size, setSize] = useState();
+  const [avgAge, setAvgAge] = useState();
+  const ages = [];
+  let sum = 0;
 
   useEffect(() => {
     const getData = async () => {
-      db.collection("Users")
+      const dbRef = db
+        .collection("Users")
         .doc(currentUser.uid)
-        .collection("patients")
+        .collection("patients");
+
+      dbRef.get().then((querySnapshot) => {
+        // doc.data() is never undefined for query doc snapshots
+        setPatients(
+          querySnapshot.docs.map((doc) => {
+            return doc.data();
+          })
+        );
+      });
+      dbRef
+        .where("completed", "==", true)
         .get()
-        .then((querySnapshot) => {
-          // doc.data() is never undefined for query doc snapshots
-          setPatients(
-            querySnapshot.docs.map((doc) => {
-              return doc.data();
-            })
-          );
+        .then((snap) => {
+          setSize(snap.size);
         });
     };
+
     getData();
   }, []);
 
+  // for (var i = 0; i = patients.length; i++) {
+  //   sum += patients.patient_age;
+  // }
+  // console.log(sum)
   return (
     <div className="page-container">
       <div className="page-wrapper">
         <div className="w-100 text-left d-flex justify-content-between">
-          <h2>Patients</h2>
+          <h1>Patients</h1>
           <button
             onClick={() => setIsOpen(true)}
             id="btn-primary-custom"
@@ -65,20 +81,20 @@ function PatientsLayout(props) {
             Create Patient
           </button>
         </div>
-            {/* TODO: Make it dynamic */}
+        {/* TODO: Make it dynamic */}
         <div className="empty-card w-100">
           <div className="patient-header__wrapper text-center">
             <div>
               <small className="small-text">total patient count</small>
-              <h1>17</h1>
+              <h1>{patients.length}</h1>
             </div>
             <div>
               <small className="small-text">avarage age</small>
-              <h1>39</h1>
+              <h1>{avgAge}</h1>
             </div>
             <div>
               <small className="small-text">completed treatments</small>
-              <h1>4</h1>
+              <h1>{size}</h1>
             </div>
           </div>
           <hr className="orange-hr"></hr>
@@ -124,7 +140,10 @@ function PatientsLayout(props) {
           </Modal.Header>
           <Modal.Body className="w-100">
             {success ? (
-              <Alert className="d-flex justify-content-between align-items-center" variant="success">
+              <Alert
+                className="d-flex justify-content-between align-items-center"
+                variant="success"
+              >
                 New patient created successfully
                 <Button
                   variant="success"
@@ -158,6 +177,7 @@ function PatientsLayout(props) {
                         patient_age: ageRef.current.value,
                         patient_name: nameRef.current.value,
                         patient_current_treatment: treatmentRef.current.value,
+                        completed: false,
                       });
                     setSuccess(true);
                   } catch {
