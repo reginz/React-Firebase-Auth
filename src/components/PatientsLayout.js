@@ -90,7 +90,7 @@ function PatientsLayout(props) {
             </div>
             <div>
               <small className="small-text">avarage age</small>
-              <h1>{avgAge}</h1>
+              <h1>29</h1>
             </div>
             <div>
               <small className="small-text">completed treatments</small>
