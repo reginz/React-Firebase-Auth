@@ -2,3 +2,35 @@
   max-width: 900px;
   border-radius: 25px;
 }
+
+.arrow a {
+  color: black;
+}
+.arrow a:hover, a:active {
+  color: black;
+}
+.arrow {
+  animation: MoveUpDown 4s ease-in-out infinite;
+  position: relative;
+ 
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 30px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #banner-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner-wrapper {
+    width: 90% !important;
+  }
+}
