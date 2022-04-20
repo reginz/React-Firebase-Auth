@@ -78,4 +78,20 @@ body {
   .modal-dialog {
     min-width: initial;
   }
+  h1 {
+    font-size: 40px !important;
+  }
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 23px !important;
+  }
+  h5{
+    font-size: 19px !important;
+  }
+  .banner-p {
+    font-size: 16px !important;
+  }
 }

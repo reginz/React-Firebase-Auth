@@ -6,16 +6,26 @@
 .arrow a {
   color: black;
 }
-.arrow a:hover, a:active {
+.arrow a:hover,
+a:active {
   color: black;
 }
 .arrow {
   animation: MoveUpDown 4s ease-in-out infinite;
   position: relative;
- 
+
   bottom: 0;
 }
 
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
 @keyframes MoveUpDown {
   0%,
   100% {
@@ -30,7 +40,29 @@
     flex-direction: column;
     text-align: center;
   }
+  .img-wrapper {
+    width: 40%;
+    height: 90%;
+  }
+  .banner-container {
+    gap: 8em;
+  }
   .banner-wrapper {
     width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner-container {
+    gap: 6em;
+  }
+  .fetures-wrapper {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .feature {
+    width: 100% !important;
   }
 }

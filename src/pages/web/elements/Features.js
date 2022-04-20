@@ -3,8 +3,8 @@ import React from "react";
 function Features(props) {
   return (
     <div>
-      <div className="d-flex" style={{ gap: "2em" }}>
-        <div className="text-center w-50">
+      <div className="d-flex fetures-wrapper" style={{ gap: "2em" }}>
+        <div className="feature text-center w-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="60"
@@ -29,7 +29,7 @@ function Features(props) {
           </p>
         </div>
 
-        <div className="text-center w-50">
+        <div className="feature text-center w-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="60"
@@ -44,7 +44,7 @@ function Features(props) {
           <p>Search oils by origin, components and effecs.</p>
         </div>
 
-        <div className="text-center w-50">
+        <div className="feature text-center w-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="60"
@@ -60,19 +60,19 @@ function Features(props) {
         </div>
       </div>
       <div className="d-flex mt-5" style={{ gap: "2em" }}>
-        <div className="text-center w-25">
+        <div className="feature text-center w-25">
           <h1>+10k</h1>
           <h5 className="pt-3">Sample Database</h5>
         </div>
-        <div className="text-center w-25">
+        <div className="feature text-center w-25">
           <h1>41</h1>
           <h5 className="pt-3">Oils</h5>
         </div>
-        <div className="text-center w-25">
+        <div className="feature text-center w-25">
           <h1>%91</h1>
           <h5 className="pt-3">Accuracy</h5>
         </div>
-        <div className="text-center w-25">
+        <div className="feature text-center w-25">
           <h1>21</h1>
           <h5 className="pt-3">Ullamcorper</h5>
         </div>

@@ -5,17 +5,17 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Banner() {
   return (
-    <div>
+    <div className="banner-container">
       <div
         id="banner-wrapper"
-        className=" d-flex justify-content-between align-items-center"
+        className="d-flex justify-content-between align-items-center"
         style={{ gap: "4em", height: "70vh" }}
       >
         <div className="banner-wrapper" style={{ width: "60%" }}>
           <h1 className="pb-3 " style={{ fontSize: "50px" }}>
             Aromatherapy with intelligence.
           </h1>
-          <p style={{ fontSize: "23px" }}>
+          <p className="banner-p" style={{ fontSize: "23px" }}>
             Arotolia AI is the world's first artificially intelligent,
             personalized aromatherapy platform that creates unique blends at the
             touch of a button. Our AI relies on our database of 400 oils and
@@ -31,7 +31,7 @@ function Banner() {
             </button>
           </a>
         </div>
-        <div>
+        <div className="img-wrapper">
           <img src={oil}></img>
         </div>
       </div>
