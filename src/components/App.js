@@ -12,12 +12,14 @@ import "../styles/App.css";
 import "../styles/OilCard.css";
 import "../styles/ThreeView.css";
 import SingleOil from "../pages/SingleOil";
+import SinglePatient from "../pages/SinglePatient";
 import NotFound from "../pages/NotFound";
 import Dashboard from "../pages/Dashboard";
 import Patients from "../pages/Patients";
 import Glossary from "../pages/Glossary";
 import Components from "../pages/Components";
 import Landing from "../pages/web/Landing";
+import Visit from "../pages/Visit";
 function App() {
   return (
     <div style={{ backgroundColor: "var(--white)" }}>
@@ -30,8 +32,10 @@ function App() {
             <PrivateRoute path="/dashboard" component={Dashboard} />
             <PrivateRoute path="/patients" component={Patients} />
             <PrivateRoute path="/oil-details/:id" component={SingleOil} />
+            <PrivateRoute path="/visits/:id" component={SinglePatient} />
             <PrivateRoute path="/dictionary" component={Glossary} />
             <PrivateRoute path="/components" component={Components} />
+            <PrivateRoute path="/visits" component={Visit} />
             <Route path="/home" component={Landing} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />

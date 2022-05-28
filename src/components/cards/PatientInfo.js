@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function PatientInfo(props) {
   const [search, setSearch] = useState("");
 
-
   return (
     <div>
       <div className=" w-100">
@@ -29,7 +28,7 @@ function PatientInfo(props) {
               </div>
 
               <div className="mt-5">
-                <small className="small-text">Age</small>
+                <small className="small-text">Birth Date</small>
                 <div>
                   <hr
                     style={{ margin: 0, width: "10%" }}
@@ -41,31 +40,64 @@ function PatientInfo(props) {
                   id="age"
                   className="mt-3 input-field"
                   placeholder="eg. 25"
-                  type="number"
+                  type="date"
                   required
                 ></input>
               </div>
             </div>
             <div className="w-50">
-              <small className="small-text">Allergies</small>
               <div>
-                <hr
-                  style={{ margin: 0, width: "10%" }}
-                  className="orange-hr"
-                ></hr>
+                {" "}
+                <small className="small-text">Phone Number</small>
+                <div>
+                  <hr
+                    style={{ margin: 0, width: "10%" }}
+                    className="orange-hr"
+                  ></hr>
+                </div>
+                <input
+                  className="input-field w-75 mt-3"
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  placeholder=" eg. 5XX XXX XXXX"
+                />
               </div>
-              <input
-                className="input-field w-75 mt-3"
-                type="text"
-                placeholder=" Search Allergies"
-                onChange={(event) => {
-                  setSearch(event.target.value);
-                }}
-              />
+              <div className="mt-5">
+                {" "}
+                <small className="small-text">Email</small>
+                <div>
+                  <hr
+                    style={{ margin: 0, width: "10%" }}
+                    className="orange-hr"
+                  ></hr>
+                </div>
+                <input
+                  className="input-field w-75 mt-3"
+                  type="email"
+                  placeholder=" eg. example@email.com"
+                />
+              </div>
             </div>
           </div>
+          <div className="mt-5">
+            <small className="small-text">Allergies</small>
+            <div>
+              <hr
+                style={{ margin: 0, width: "10%" }}
+                className="orange-hr"
+              ></hr>
+            </div>
+            <input
+              className="input-field w-100 mt-3"
+              type="text"
+              placeholder=" Search Allergies"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            />
+          </div>
 
-          <div className=" mt-5">
+          {/* <div className=" mt-5">
             <small className="small-text">effects</small>
             <div>
               <hr
@@ -81,27 +113,8 @@ function PatientInfo(props) {
                 setSearch(event.target.value);
               }}
             />
-          </div>
-          {props.treatment ? (
-            <div className=" mt-5">
-              <small className="small-text">treatment</small>
-              <div>
-                <hr
-                  style={{ margin: 0, width: "10%" }}
-                  className="orange-hr"
-                ></hr>
-              </div>
-              <input
-                className="input-field w-75 mt-3"
-                type="text"
-                placeholder="Current Treatment"
-                ref={props.treatmentRef}
-                required
-              />
-            </div>
-          ) : (
-            <></>
-          )}
+          </div> */}
+          {props.treatment ? <div></div> : <></>}
           {props.treatment === false ? (
             <div className="d-flex justify-content-end">
               <button id="btn-primary-custom" className="btn mt-3">

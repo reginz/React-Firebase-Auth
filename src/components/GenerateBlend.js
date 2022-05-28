@@ -11,7 +11,7 @@ const renderTooltip = (props) => (
 function GenerateBlend(props) {
   return (
     <div className="d-flex flex-column w-100 p-5">
-      <h1>Ask to AI</h1>
+      <h1>Ask our Aromatherapy Intelligence</h1>
       <p className="mb-4" style={{ color: "var(--gray)" }}>
         (Only in Turkish.)
       </p>

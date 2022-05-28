@@ -7,7 +7,6 @@ function ComponentsCards(props) {
   const [components, setComponents] = useState();
   const [search, setSearch] = useState("");
   const [info, setInfo] = useState();
-  const [str, setStr] = useState();
 
   useEffect(() => {
     const getData = async () => {
