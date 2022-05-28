@@ -20,6 +20,7 @@ import Glossary from "../pages/Glossary";
 import Components from "../pages/Components";
 import Landing from "../pages/web/Landing";
 import Visit from "../pages/Visit";
+import ProfileInfo from "./cards/ProfileInfo";
 function App() {
   return (
     <div style={{ backgroundColor: "var(--white)" }}>
@@ -36,6 +37,7 @@ function App() {
             <PrivateRoute path="/dictionary" component={Glossary} />
             <PrivateRoute path="/components" component={Components} />
             <PrivateRoute path="/visits" component={Visit} />
+            <PrivateRoute path="/profile-information" component={ProfileInfo} />
             <Route path="/home" component={Landing} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />

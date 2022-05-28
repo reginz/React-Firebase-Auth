@@ -5,6 +5,7 @@ import app from "../../firebase";
 import "firebase/firestore";
 import "../../styles/Inputs.css";
 import PatientInfo from "./PatientInfo";
+import VisitInfo from "./VisitInfo";
 const db = app.firestore();
 function VisitCard() {
   const [oilData, setOilData] = useState([]);
@@ -107,7 +108,7 @@ function VisitCard() {
         </div>
         <Modal onHide={() => setIsOpen(false)} show={isOpen}>
           <Modal.Header closeButton>
-            <h2>Create New Patient</h2>
+            <h2>Add New Visit</h2>
           </Modal.Header>
           <Modal.Body className="w-100">
             {success ? (
@@ -115,17 +116,17 @@ function VisitCard() {
                 className="d-flex justify-content-between align-items-center"
                 variant="success"
               >
-                New patient created successfully
+                New visit created successfully
                 <Button
                   variant="success"
                   onClick={() => (window.location.href = "/patients")}
                 >
-                  Back to Patients
+                  Back to Visits
                 </Button>
               </Alert>
             ) : (
               <>
-                <PatientInfo nameRef={nameRef} buttonText="Create Patient" />{" "}
+                <VisitInfo nameRef={nameRef} buttonText="Create Patient" />{" "}
               </>
             )}
             <div className="d-flex justify-content-end">
